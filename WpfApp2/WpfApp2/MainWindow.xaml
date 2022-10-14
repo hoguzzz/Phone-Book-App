@@ -1,0 +1,275 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="PHONE BOOK" Height="700" Width="1000" Background="Black">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="Ekle" Foreground="AliceBlue"
+                FontSize="35" 
+                FontWeight="Medium" 
+                Grid.Column="6"
+                Grid.Row="3" 
+                Grid.ColumnSpan="4"
+                Margin="10"              
+                HorizontalAlignment="Left" Click="ekle_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" 
+                            Value="Arial" />
+                    <Setter Property="Background"
+                            Value="DarkCyan" />
+                    <Setter Property="Cursor"
+                            Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Background" 
+                                    Value="DeepPink" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="120" Height="40"
+                            CornerRadius="12"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+        <Button Content="Listele" Foreground="AliceBlue"
+                FontSize="35" 
+                FontWeight="Medium" 
+                Grid.Column="6"
+                Grid.Row="4" 
+                Grid.ColumnSpan="4"
+                Margin="10"
+                HorizontalAlignment="Left" Click="listele_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" 
+                            Value="Arial" />
+                    <Setter Property="Background"
+                            Value="DarkCyan" />
+                    <Setter Property="Cursor"
+                            Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Background" 
+                                    Value="DeepPink" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="120" Height="40"
+                            CornerRadius="12"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="Güncelle" Foreground="AliceBlue"
+                FontSize="35" 
+                FontWeight="Medium" 
+                Grid.Column="7"
+                Grid.Row="4" 
+                Grid.ColumnSpan="3"
+                HorizontalAlignment="Right"
+                Margin="10" Click="guncelle_Click"
+                >
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" 
+                            Value="Arial" />
+                    <Setter Property="Background"
+                            Value="DarkCyan" />
+                    <Setter Property="Cursor"
+                            Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Background" 
+                                    Value="DeepPink" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="120" Height="40"
+                            CornerRadius="12"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+       
+        <Button Content="Kaldır" Foreground="AliceBlue" FontSize="35" 
+                FontWeight="Medium" Grid.Column="7" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="10" Click="kaldir_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" Value="Arial" />
+                    <Setter Property="Background" Value="DeepPink" />
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Aqua" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="120" Height="40"
+                            CornerRadius="12"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+        <TextBox x:Name="first_name" 
+                 FontSize="25" 
+                 Height="38" 
+                 Width="265"
+                 Grid.Column="0"
+                 Grid.Row="1"
+                 Grid.ColumnSpan="3" 
+                 HorizontalAlignment="Left"  
+                 BorderBrush="Red" 
+                 BorderThickness="3">
+            <TextBox.Text>
+                Name
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="last_name" FontSize="25" Height="38" Width="265" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Left"  BorderBrush="Red" BorderThickness="3">
+            <TextBox.Text>
+                Surname
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="Phone" FontSize="25" Height="38" Width="265" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Left"  BorderBrush="Red" BorderThickness="3">
+            <TextBox.Text>
+                Phone
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="Email" FontSize="25" Height="38" Width="265" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Left"  BorderBrush="Red" BorderThickness="3">
+            <TextBox.Text>
+                Email
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="Adress" FontSize="25" Height="38" Width="265" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3" HorizontalAlignment="Left"  BorderBrush="Red" BorderThickness="3">
+            <TextBox.Text>
+                Adress
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="id" FontSize="25" Height="38" Width="265" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Left"  BorderBrush="Red" BorderThickness="3">
+            <TextBox.Text>
+                id
+            </TextBox.Text>
+        </TextBox>
+        <TextBox x:Name="txtID" FontSize="25" Height="38" Width="365" Grid.Column="3" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Left"  BorderBrush="Red" BorderThickness="3">
+        </TextBox>
+        <TextBox x:Name="txtName" FontSize="25" Height="38" Width="365" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Left"  BorderBrush="Red" BorderThickness="3">
+         </TextBox>
+        <TextBox x:Name="txtSurname" FontSize="25" Height="38" Width="365" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Left"  BorderBrush="Red" BorderThickness="3">
+        </TextBox>
+        <TextBox x:Name="txtPhone" FontSize="25" Height="38" Width="365" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Left"  BorderBrush="Red" BorderThickness="3">
+        </TextBox>
+        <TextBox x:Name="txtEmail" FontSize="25" Height="38" Width="365" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Left"  BorderBrush="Red" BorderThickness="3">
+        </TextBox>
+        <TextBox x:Name="txtAdress" FontSize="25" Height="38" Width="365" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="3" HorizontalAlignment="Left"  BorderBrush="Red" BorderThickness="3">
+        </TextBox>
+        <DataGrid x:Name="datagrid"
+                  Height="350" Width="1000" 
+                  Background="White" 
+                  Grid.Column="0" 
+                  Grid.Row="6"
+                  Grid.ColumnSpan="10"
+                  Grid.RowSpan="4">
+
+        </DataGrid>
+        <Button Content="Çıkış" Foreground="AliceBlue"
+                FontSize="35" 
+                FontWeight="Medium" 
+                Grid.Column="7"
+                Grid.Row="10" 
+                Grid.ColumnSpan="4"
+                Margin="10"
+                HorizontalAlignment="Left" Click="exit_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" 
+                            Value="Arial" />
+                    <Setter Property="Background"
+                            Value="Red" />
+                    <Setter Property="Cursor"
+                            Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Background" 
+                                    Value="Gray" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="120" Height="40"
+                            CornerRadius="12"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Image Source="C:\Users\Lenovo\OneDrive - ogrenci.ogu.edu.tr\Masaüstü\C# Öğreniyorum\WpfApp2\WpfApp2\Images\Image1.jpg" Grid.Column="7" Grid.Row="0" Height="150" Width="150" HorizontalAlignment="Left" VerticalAlignment="Stretch" Grid.ColumnSpan="5" Grid.RowSpan="3" />
+        <Button Name="Ara" Grid.Column="2" Grid.Row="10" Background="Transparent" Click="Ara_Click">
+            <Image Source="C:\Users\Lenovo\OneDrive - ogrenci.ogu.edu.tr\Masaüstü\C# Öğreniyorum\WpfApp2\WpfApp2\Images\Image4.png" />
+        </Button>
+        <RadioButton Name="sbn" Content="Search by name" Foreground="White" Grid.Column="4" Grid.Row="10" Grid.ColumnSpan="2" FontSize="18"/>
+        <RadioButton Name="sbl" Content="Search by LastName" Foreground="White" Grid.Column="4" Grid.Row="10" VerticalAlignment="Bottom" Grid.ColumnSpan="2" FontSize="18" />
+    </Grid>
+    
+</Window>
